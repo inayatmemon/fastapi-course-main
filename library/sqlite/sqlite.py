@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from config.config import sqlite_url
 
-SQLALCHAMY_DATABASE_URL = 'sqlite:///./blog.db'
+SQLALCHAMY_DATABASE_URL = sqlite_url
 
 engine = create_engine(SQLALCHAMY_DATABASE_URL, connect_args={
                        "check_same_thread": False})
@@ -10,6 +11,7 @@ engine = create_engine(SQLALCHAMY_DATABASE_URL, connect_args={
 SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False,)
 
 Base = declarative_base()
+
 
 def get_db():
     db = SessionLocal()

@@ -1,0 +1,48 @@
+
+
+# sqlite db
+SQLITE_URL = ""
+
+# mongodb
+MONGODB_URL = ""
+MONGODB_DB = ""
+
+# TimeZone
+TZ = UTC
+
+# SERVER
+APP_NAME = "APP_NAME"
+API_PORT = 50053
+SERVER_URI = "http://server-ip:50053"
+ALLOW_ORIGIN = "*"
+LOG_LEVEL = "debug"  # trace, debug, info, warning, error, fatal, panic
+DEFAULT_LANGUAGE = "en"
+LANGUAGES = "en,ar"
+API_GATEWAY = "api.example.com"
+API_GATEWAY_AUTH = "http://api-ip:8090/validate"
+
+# SERVICES
+
+# Push
+
+# SMS
+
+# GRPC
+
+# RabbitMQ
+
+# MongoDB
+
+# ElasticSearch
+
+# MQTT
+
+# Redis
+
+# OR Server
+
+# Charge Customer
+
+# Ship Rocker service
+
+# Driver Loyality service
