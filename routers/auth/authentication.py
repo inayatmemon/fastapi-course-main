@@ -1,11 +1,9 @@
 from fastapi import APIRouter, Depends, status, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-#from app.routers.blog.blog import schemas, database, models, token
 from library.sqlite import sqlite as database
 from models.user import user as models
 from utils.security import token
-#from blog.hashing import Hash
 from utils.security.hashing import Hash
 
 

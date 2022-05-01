@@ -1,9 +1,8 @@
-import logging
-
 from bson import ObjectId
 from library.mongodb.mongodb import mydb
 from pydantic import BaseModel
 from schemas.serializable.serializable import serializeDict, serializeList
+from utils.logger.logger import logger
 
 collection = mydb["mongousers"]
 
@@ -19,7 +18,7 @@ def insertOne(user: User):
         collection.insert_one(dict(user))
         return True
     except Exception as e:
-        logging.exception("Exception while insert one : ", e)
+        logger.exception("Exception while insert one : ", e)
         return False
 
 
@@ -28,7 +27,7 @@ def findOneAndDelete(id, user: User):
         collection.find_one_and_delete({"_id": ObjectId(id)})
         return True
     except Exception as e:
-        logging.exception("Exception while findOneAndDelete : ", e)
+        logger.exception("Exception while findOneAndDelete : ", e)
         return False
 
 
@@ -37,7 +36,7 @@ def findAll():
         return serializeList(collection.find())
 
     except Exception as e:
-        logging.exception("Exception while findAll : ", e)
+        logger.exception("Exception while findAll : ", e)
         return False
 
 
@@ -49,5 +48,5 @@ def findOneAndUpdate(id, user: User):
         return serializeDict(collection.find_one({"_id": ObjectId(id)}))
 
     except Exception as e:
-        logging.exception("Exception while findOneAndUpdate : ", e)
+        logger.exception("Exception while findOneAndUpdate : ", e)
         return False

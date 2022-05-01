@@ -1,10 +1,7 @@
-from fastapi import APIRouter
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-#from app.routers.blog.blog import database, schemas, models
 from library.sqlite import sqlite as database
 from schemas.user import user as schemas
-#from blog.repository import user
 from repository.user.create import create
 from repository.user.read import read
 

@@ -12,14 +12,20 @@ TZ = UTC
 
 # SERVER
 APP_NAME = "APP_NAME"
-API_PORT = 50053
-SERVER_URI = "http://server-ip:50053"
+API_PORT = integer
+SERVER_URI = ""
 ALLOW_ORIGIN = "*"
-LOG_LEVEL = "debug"  # trace, debug, info, warning, error, fatal, panic
 DEFAULT_LANGUAGE = "en"
 LANGUAGES = "en,ar"
 API_GATEWAY = "api.example.com"
-API_GATEWAY_AUTH = "http://api-ip:8090/validate"
+API_GATEWAY_AUTH = ""
+
+
+# Security
+TOKEN_SECRET_KEY = ""
+TOKEN_ALGORITHM = ""
+ACCESS_TOKEN_EXPIRE_MINUTES = integer
+
 
 # SERVICES
 

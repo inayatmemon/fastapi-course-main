@@ -1,7 +1,5 @@
 from models.mongotestuser.user import findAll
-from library.mongodb.mongodb import conn
-from schemas.mongottestuser.user import serializeList
-from bson import ObjectId
+from utils.logger.logger import logger
 
 
 def find_all_users():
@@ -9,4 +7,5 @@ def find_all_users():
     if not result:
         return {"Message": "Failed"}
     else:
+        logger.info(result)
         return result

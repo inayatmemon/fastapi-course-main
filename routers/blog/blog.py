@@ -1,12 +1,10 @@
 from typing import List
-from fastapi import APIRouter, Depends, status, HTTPException
+from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
-#from app.routers.blog.blog import schemas, database, models, oauth2
 from library.sqlite import sqlite as database
 from utils.security import oauth2
 from schemas.user import user as schemas_user
 from schemas.blog import blog as schemas_blog
-#from blog.repository import blog
 from repository.blog.create import create as create_blog
 from repository.blog.read import read as read_blog
 from repository.blog.update import update as update_blog
