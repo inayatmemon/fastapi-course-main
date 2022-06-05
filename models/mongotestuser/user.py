@@ -50,3 +50,20 @@ def findOneAndUpdate(id, user: User):
     except Exception as e:
         logger.exception("Exception while findOneAndUpdate : ", e)
         return False
+
+def findOne(user: User):
+    try:
+        userdb = collection.find_one({"name": user.name})
+        #print("---------------------------------------------------->",user)    
+        result = serializeDict(collection.find_one({"name": user.name}))
+        if result["name"] == user.name:
+            result["result"] = True
+        else:
+            result["result"] = False
+        print("---------------------------------------------------->",result)
+        
+        #return serializeDict(collection.find_one({"username": user.name}))
+        return result
+    except Exception as e:
+        logger.exception("Exception while findOne : ", e)
+        return False

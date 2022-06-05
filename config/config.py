@@ -4,8 +4,6 @@ import os
 
 load_dotenv()
 
-# sqlite
-sqlite_url = os.getenv("SQLITE_URL")
 
 # mongodb
 mongodb_url = os.getenv("MONGODB_URL")
